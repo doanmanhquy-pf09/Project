@@ -20,5 +20,10 @@ public class ComicBL {
     public List<Comic> getComicByRank() {
         return comicDAL.getCBRank();
     }
-    
+    public List<Comic> getComicDetails(Comic details) {
+        return comicDAL.getComicID(details);
+    }
+    public int updatelikeComic(Comic updateLike) {
+        return comicDAL.updatelikeComic(updateLike);
+    }
 }

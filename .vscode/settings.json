@@ -1,3 +1,8 @@
 {
-    "maven.view": "flat"
+    "maven.view": "flat",
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\manhq\\Downloads\\mysql-connector-java-8.0.20\\mysql-connector-java-8.0.20.jar"
+    ]
 }
