@@ -304,7 +304,7 @@ public class UserUI {
             ListAllUser(user);
         }
         System.out.println(
-                "|______|___________________________|______________|__________|___________|_____________________|________________|________________|");
+                "|______|___________________________|______________|__________|___________|_____________________|________________|__________________________________|");
         showUpdateAndDelete(ID);
     }
 
@@ -323,7 +323,7 @@ public class UserUI {
             ListAllUser(user);
         }
         System.out.println(
-                "|______|___________________________|______________|__________|___________|_____________________|________________|________________|");
+                "|______|___________________________|______________|__________|___________|_____________________|________________|__________________________________|");
         showUpdateAndDelete(ID);
 
     }
@@ -332,30 +332,30 @@ public class UserUI {
         System.out.println(
                 "                                                            CUSTOMER LIST                               ");
         System.out.println(
-                " ________________________________________________________________________________________________________________________________");
+                " __________________________________________________________________________________________________________________________________________________");
         System.out.println(
-                "|   ID |                      Name | Date of birth|   Gender |   Address |               Email |       UserName |       Password |");
+                "|   ID |                      Name | Date of birth|   Gender |   Address |               Email |       UserName |                         Password |");
         System.out.println(
-                "|______|___________________________|______________|__________|___________|_____________________|________________|________________|");
+                "|______|___________________________|______________|__________|___________|_____________________|________________|__________________________________|");
     }
 
     public static void ListAllUser(User user) {
-        System.out.format("|%5d |%26s |%13s |%9s |%10s |%20s |%15s |%15s |\n", user.getID(), user.getYourName(),
+        System.out.format("|%5d |%26s |%13s |%9s |%10s |%20s |%15s | %15s |\n", user.getID(), user.getYourName(),
                 user.getDateOfBirth(), user.getGender(), user.getAddress(), user.getEmail(), user.getUserName(),
                 user.getPassword());
         System.out.println(
-                "|------|---------------------------|--------------|----------|-----------|---------------------|----------------|----------------|");
+                "|------|---------------------------|--------------|----------|-----------|---------------------|----------------|----------------------------------|");
     }
 
     public static void showUpdateAndDelete(int ID) {
         System.out.println(
-                "----------------------------------------------------------------------------------------------------------------------------------");
+                "----------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println(
-                "|                                                    Update  <1> | <2>  Delete                                                   |");
+                "|                                                           Update  <1> | <2>  Delete                                                              |");
         System.out.println(
-                "|                                                             <0> BACK                                                           |");
+                "|                                                                   <0> BACK                                                                       |");
         System.out.println(
-                "----------------------------------------------------------------------------------------------------------------------------------");
+                "----------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.print(".Choose: ");
         switch (interger()) {
             case 1:
@@ -481,15 +481,14 @@ public class UserUI {
             String error = scanner.nextLine().trim();
             update.setTemporary2(blankOrNull(error, 1));
         } else if (t == 2) {
-            update.setTemporary("date_of_birth");
+            update.setTemporary("date_of_birth"); 
             System.out.print("Enter year(1900 ~ 2020): ");
             String year = "" + year() + "";
             System.out.print("Enter month(1 ~ 12): ");
             String month = "" + month() + "";
             System.out.print("Enter day: ");
             String day = "" + day(year, month) + "";
-            update.setTemporary2(year + "/" + month + "/" + day);
-            System.out.println(update.getTemporary2());
+            update.setTemporary2(day + "/" + month + "/" + month);
         } else if (t == 3) {
             update.setTemporary("gender");
             String error = scanner.nextLine().toUpperCase().trim();
@@ -568,7 +567,7 @@ public class UserUI {
                 } else {
                     monthh = "0" + month + "";
                 }
-                
+
             } catch (Exception e) {
                 System.out.println("<!> Please enter a number <!>");
                 System.out.print(".Retype: ");
